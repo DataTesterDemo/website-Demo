@@ -20,10 +20,10 @@ class ProgrammedExperiment extends React.Component{
           resolve(
             <div>
               <p>
-                Price: <s>$100</s> $70
+                Price: <s>$100</s> $80
               </p>
               <p>
-                You save: 30%
+                You save: 20%
               </p>
             </div>
           ) //custom inserted code for showing discount
@@ -31,7 +31,7 @@ class ProgrammedExperiment extends React.Component{
           resolve(
             <div>
               <p>
-                Price: $70
+                Price: $80
               </p>
             </div>
           ) //custom inserted code for showing no discount
