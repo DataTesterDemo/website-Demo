@@ -15,6 +15,7 @@ Deployment of website (React) to hosting platform (Firebase) is done automatical
 Deployment will be linked to a Firebase project via the `FIREBASE_TOKEN`. If there is a need to change the token (e.g. change of Google account; change in Firebase project), a new `FIREBASE_TOKEN` needs to be assigned
 
 **Reassign `FIREBASE_TOKEN`:** go to `Settings` on tabs above -> go to `secrets` -> `update` the  `FIREBASE_TOKEN`
+
 **Find out Firebase Token:** Using Firebase CLI on terminal, enter `firebase login:ci` to get your Firebase Token
 
 
