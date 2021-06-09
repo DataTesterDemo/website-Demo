@@ -7,9 +7,15 @@ Website is developed with ReactJS framework. `src` and `public` are the ReactJS 
 Currently, changes to the React app will automatically be updated, built and deployed to Firebase once changes pushed to `main` branch. 
 
 ### Running Website on local machine
-
+To run website on local machine, enter `npm run` in the terminal. a `localhost` website instance will be started.
 
 ## Website Hosting (Firebase)
+Website is hosted on Firebase Hosting, a microservice hosting platform. Find out more: https://firebase.google.com/docs/hosting
+
+### Deploying website
+Download Firebase CLI via npm do link your Firebase project and deploy website.
+
+**Note:** For the demo app, automatic deployment is done using Github Actions (see below), thus it is not necessary to manually deploy the website. 
 
 ## Continuous Deployment (Github Actions)
 Deployment of website (React) to hosting platform (Firebase) is done automatically with Github Actions. Whenever a push is made to the `main` branch, Github Actions will automatically build and deploy the React App to the allocated Firebase Hosting project.
