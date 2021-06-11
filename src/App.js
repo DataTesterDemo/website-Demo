@@ -1,29 +1,23 @@
 import './App.css';
 import React from 'react';
-import ProgrammedExperiment from './Programmed.js'
+import { BrowserRouter, Link, Route, Switch, Redirect} from 'react-router-dom';
+import SignUp from './components/Signup/Signup.js'
+import Products from './components/Products/Products.js'
 
 //=====================================//
-//===button used as a metric for demo==//
+//=============Home Page===============//
 //=====================================//
-class PurchaseButton extends React.Component{
-  state = {
-    purchased:false
-  }
-  onClick = () =>{
-    //report data to dataranger
-    window.collectEvent('click_purchase_button')
-    this.setState({
-      purchased:true
-    })
-  }
+class Home extends React.Component{
   render(){
-    const {purchased} = this.state
     return(
       <div>
-        {!purchased?
-          <button onClick={this.onClick}>Purchase</button>
-          :<p>Thank you for purchasing</p>
-        }
+        <h1>Demo Website</h1>
+        <nav>
+          <ul>
+            <li><Link to="/signup">SignUp</Link></li>
+            <li><Link to="/products">Products</Link></li>
+          </ul>
+        </nav>
       </div>
     )
   }
@@ -33,12 +27,31 @@ class PurchaseButton extends React.Component{
 //==========display content============//
 //=====================================//
 function App() {
-
   return (
     <div className="App">
       <header className="App-header">
-        <ProgrammedExperiment/>
-        <PurchaseButton></PurchaseButton>
+        <div className="wrapper">
+            <BrowserRouter>
+              <Switch>
+                <Route exact path="/" render={() => (
+                  <Redirect to="/home"/>
+                )}/>
+                <Route path="/home">
+                  <Home />
+                </Route>
+                <Route path="/signup" >
+                  <SignUp />
+                  <p></p>
+                  <Link to="/" className="button-home">Back to home page</Link>
+                </Route>
+                <Route path="/products">
+                  <Products />
+                  <p></p>
+                  <Link to="/" className="button-home">Back to home page</Link>
+                </Route>
+              </Switch>
+            </BrowserRouter>
+        </div>
       </header>
     </div>
   );

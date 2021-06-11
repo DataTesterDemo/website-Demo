@@ -20,8 +20,8 @@
           //window.collectEvent('init', { app_id:230684, channel: 'sg', enable_ab_test: true, autotrack: true, log: "true", disable_ssid: "true"});
           //config for datatester
           window.collectEvent('init', {app_id: 230684,enable_ab_test: true,channel: 'cn',log: "true",});
-          window.collectEvent('config',{ user_unique_id: 'cjj' })
           window.collectEvent('start') 
+          window.collectEvent('getToken', (token) => {console.log(token)});
       </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />

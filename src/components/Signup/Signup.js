@@ -1,14 +1,18 @@
 import React from 'react';
+import FormV1 from '../Signup/formV1.js'
+import FormV2 from '../Signup/formV2.js'
 
-//=====================================//
-//===demo for programmed experiment====//
-//=====================================//
-class ProgrammedExperiment extends React.Component{
+//=================================================//
+//=========setup for programmed experiment=========//
+//==============code inserted below================//
+//=================================================//
+class SignUp extends React.Component{
 
   constructor(props) {
     super(props);
     this.state = {
-      content: null
+      content: null,
+      clicked:false
     };
   }
   componentDidMount(){
@@ -16,25 +20,15 @@ class ProgrammedExperiment extends React.Component{
     var programmedExperiment = new Promise((resolve,reject)=>{
       //code from data Tester
       window.collectEvent('getVar', 'showDiscount', true, function(value) {
+        console.log(value)
         if(value){
           resolve(
-            <div>
-              <p>
-                Price: <s>$100</s> $80
-              </p>
-              <p>
-                You save: 20%
-              </p>
-            </div>
-          ) //custom inserted code for showing discount
+            <FormV1 />
+          ) //custom inserted code for showing first signup form
         }else{
           resolve(
-            <div>
-              <p>
-                Price: $80
-              </p>
-            </div>
-          ) //custom inserted code for showing no discount
+            <FormV2 />
+          ) //custom inserted code for showing second signup form
         }
       })   
     })
@@ -53,6 +47,6 @@ class ProgrammedExperiment extends React.Component{
     )
   }
 }
-export default ProgrammedExperiment;
+export default SignUp;
 
   
