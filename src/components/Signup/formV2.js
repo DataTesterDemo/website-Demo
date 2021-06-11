@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Link, Route, Switch, Redirect} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 //========================================//
 //==========Sample form version 2=========//
