@@ -28,7 +28,7 @@ class FormV2 extends React.Component{
   }
   //submit form data
   handleSubmit(event){
-    const {name, email, password,time} = this.state
+    const {email, time} = this.state
     const newTime = (Date.now() - time)/1000
     //resetting form data
     event.preventDefault()

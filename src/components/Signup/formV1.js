@@ -93,7 +93,7 @@ class FormV1 extends React.Component {
     if(currentStep !== 3){
       this._next()
     }else{
-      const {name, email, password,time} = this.state
+      const {email, time} = this.state
       const newTime = (Date.now() - time)/1000
       //resetting form data
       event.preventDefault()
