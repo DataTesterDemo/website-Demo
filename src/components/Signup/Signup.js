@@ -1,6 +1,7 @@
 import React from 'react';
-import FormV1 from '../Signup/formV1.js'
-import FormV2 from '../Signup/formV2.js'
+import { Route, Redirect} from 'react-router-dom';
+import FormV1 from "../Signup/formV1.js"
+import FormV2 from "../Signup/formV2.js"
 
 //=================================================//
 //=========setup for programmed experiment=========//
@@ -12,7 +13,6 @@ class SignUp extends React.Component{
     super(props);
     this.state = {
       content: null,
-      clicked:false
     };
   }
   componentDidMount(){
@@ -23,11 +23,19 @@ class SignUp extends React.Component{
         console.log(value)
         if(value){
           resolve(
-            <FormV1 />
+            <div>
+            <Route exact path="/signup" render={() => (
+              <Redirect to="/signup/v1"/>
+            )}/>
+            </div>
           ) //custom inserted code for showing first signup form
         }else{
           resolve(
-            <FormV2 />
+            <div>
+            <Route exact path="/signup" render={() => (
+              <Redirect to="/signup/v2"/>
+            )}/>
+            </div>
           ) //custom inserted code for showing second signup form
         }
       })   
@@ -42,6 +50,12 @@ class SignUp extends React.Component{
   render(){
     return(
       <div>
+        <Route path="/signup/v1">
+          <FormV1/>
+        </Route>
+        <Route path="/signup/v2">
+          <FormV2/>
+        </Route>
         {this.state.content}
       </div>
     )

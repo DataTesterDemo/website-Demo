@@ -3,6 +3,7 @@ import React from 'react';
 import { BrowserRouter, Link, Route, Switch, Redirect} from 'react-router-dom';
 import SignUp from './components/Signup/Signup.js'
 import Products from './components/Products/Products.js'
+import Promotions from './components/Promotions/Promotion';
 
 //=====================================//
 //=============Home Page===============//
@@ -16,6 +17,7 @@ class Home extends React.Component{
           <ul>
             <li><Link to="/signup">SignUp</Link></li>
             <li><Link to="/products">Products</Link></li>
+            <li><Link to="/promotion">promotions</Link></li>
           </ul>
         </nav>
       </div>
@@ -41,13 +43,18 @@ function App() {
                 </Route>
                 <Route path="/signup" >
                   <SignUp />
-                  <p></p>
-                  <Link to="/" className="button-home">Back to home page</Link>
+                  <div className='divider'></div>
+                  <Link to="/" className="button-home button-demo">Back to Demo website</Link>
                 </Route>
                 <Route path="/products">
                   <Products />
-                  <p></p>
-                  <Link to="/" className="button-home">Back to home page</Link>
+                  <div className='divider'></div>
+                  <Link to="/" className="button-home button-demo">Back to Demo website</Link>
+                </Route>
+                <Route path="/promotion">
+                  <Promotions />
+                  <div className='divider'></div>
+                  <Link to="/" className="button-home button-demo">Back to Demo website</Link>
                 </Route>
               </Switch>
             </BrowserRouter>

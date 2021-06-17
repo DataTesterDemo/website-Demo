@@ -41,11 +41,10 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  margin-left: 15%;
+  display: inline-block;
 }
-
 li {
-  float: left;
+  display: inline-block
 }
 
 li a {
@@ -64,14 +63,30 @@ li a:hover {
   color: white;
   text-align: center;
   padding: 14px 16px;
-  text-decoration: none;  
+  text-decoration: none; 
+  font-size: 17px; 
 }
 .button-home:hover{
   opacity: 0.7;
   transition: 0.2s;
 }
-.button-small{
-  font-size: 20px;
+.button-demo{
+  font-size: 25px;
+}
+
+.button-intermediate {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  color: white;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  font-size: 17px
+}
+.button-intermediate:hover{
+  opacity: 0.7;
+  transition: 0.2s;
 }
 
 .card{
@@ -97,5 +112,14 @@ input {
   height: 20px;
   flex: 0 0 200px;
   margin-left: 10px;
+}
+.rows .row {
+  display: inline-block;
+}
+.row{
+  border: 1px solid #eee;
+  width: 300px;
+  padding : 10px;
+  margin: 20px;
 }
 
