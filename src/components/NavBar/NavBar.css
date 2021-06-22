@@ -1,0 +1,28 @@
+.navbar{
+  background-color: transparent;
+  margin-left: 5%;
+  margin-right: 5%;
+  
+}
+
+.navbar-brand {
+  font-weight: bold;
+  margin-right: 60px;
+  margin-left: 10px;
+  font-size: 27px !important;
+}
+.nav-link {
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-weight: bold;
+  font-size: 17px
+}
+
+.nav-link:hover {
+  color: blue; /*will change color of text within the element on hover */
+}
+
+.dropdown .dropdown-menu {
+  transition: all 0.5s ease-in-out;
+}

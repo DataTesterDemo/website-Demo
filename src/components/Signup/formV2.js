@@ -1,10 +1,12 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {Card,Button} from 'react-bootstrap';
+import "./Signup.css"
 
-//========================================//
-//==========Sample form version 2=========//
-//========Single-page signup form=========//
-//========================================//
+//=================================================//
+//======Variation 1 for programmed experiment======//
+//==============single-page signup form============//
+//=================================================//
 class FormV2 extends React.Component{
   constructor(props){
     super(props)
@@ -57,58 +59,70 @@ class FormV2 extends React.Component{
     return(
         <div>
           {!registered?
-              <div className="card">
+            <Card className='card-signup'>
+              <Card.Body>
               <form onSubmit={this.handleSubmit}>
-                <h3>Basic Information</h3>
-                <label>
-                  Name:
-                  <input 
-                    className="form-control"
-                    id="name"
-                    name="name"
-                    type="text"
-                    placeholder="Enter name"
-                    value={name} // Prop: The name input data
-                    onChange={this.handleChange} // Prop: Puts data into state
-                  />
-                </label>
-                <label>
-                  Email:
-                  <input 
-                    className="form-control"
-                    id="email"
-                    name="email"
-                    type="text"
-                    placeholder="Enter email"
-                    value={email} // Prop: The email input data
-                    onChange={this.handleChange} // Prop: Puts data into state
-                    required
-                  />
-                </label>
-                <label>
-                  Password
-                  <input 
-                    className="form-control"
-                    id="password"
-                    name="password"
-                    type="password"
-                    placeholder="Enter password"
-                    value={password} // Prop: The password input data
-                    onChange={this.handleChange} // Prop: Puts data into state
-                  />
-                </label>
-                <input
-                type='submit'
-                className="button-intermediate"
-                />
+              
+              <h3>Basic Information</h3>
+              <hr></hr>
+              <label for="name"> Name: </label>
+              <span>
+              <input 
+                className="form-control text-input"
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Enter name"
+                value={name} // Prop: The name input data
+                onChange={this.handleChange} // Prop: Puts data into state
+              />
+              </span>
+              <br></br>
+              <label for="email"> Email: </label>   
+              <span>   
+                <input 
+                  className="form-control text-input"
+                  id="email"
+                  name="email"
+                  type="text"
+                  placeholder="Enter email"
+                  value={email} // Prop: The email input data
+                  onChange={this.handleChange} // Prop: Puts data into state
+                  required
+                />   
+              </span>       
+              <br></br>
+              <label for="password"> Password: </label>
+              <span>
+              <input 
+                className="form-control text-input"
+                id="password"
+                name="password"
+                type="password"
+                placeholder="Enter password"
+                value={password} // Prop: The password input data
+                onChange={this.handleChange} // Prop: Puts data into state
+              />
+              </span>
+              <br></br>
+              <input
+              type='submit'
+              className="button-intermediate"
+              />
               </form>
+              </Card.Body>
+            </Card>
 
-            </div>
             :
-            <div className="card">
-              <p>Thank you for registering</p>
-              <Link to="/signup" className="button-home">Register again</Link>
-            </div>
+            <Card className="card-signup">
+              <Card.Body>
+              <h3>Thank you for registering</h3>
+              <br></br>
+              <Link to="/signup" className="button-home">
+                <Button type="button" variant="outline-dark"> Register again</Button>
+              </Link>
+              </Card.Body>
+            </Card>
           }
         </div>
     )

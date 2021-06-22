@@ -1,6 +1,13 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {Card, Button} from 'react-bootstrap';
+import "./Signup.css"
 
+
+//=================================================//
+//======Variation 1 for programmed experiment======//
+//==============multi-page signup form=============//
+//=================================================//
 class FormV1 extends React.Component {
   constructor(props) {
     super(props)
@@ -10,6 +17,7 @@ class FormV1 extends React.Component {
       name: '',
       email: '',
       password: '', 
+      repassword: '',
       mobile: '',
       registered:false,
       time: 0
@@ -98,10 +106,10 @@ class FormV1 extends React.Component {
       //resetting form data
       event.preventDefault()
       event.target.reset()
+      console.log(this.state)
       //sending data to data tester
       console.log('sending data')
       window.collectEvent('click_register_button') //sending data of register click
-      console.log(newTime)
       window.collectEvent('register_time_taken',{time: newTime}) //sending data of time taken to register in seconds
       window.collectEvent('config', { //sending data of UUID
         user_unique_id: email,
@@ -122,7 +130,7 @@ class FormV1 extends React.Component {
     return (
       <div>
       {!registered?
-          <div className="card">  
+          <div>  
               <Step1 
                 currentStep={this.state.currentStep} 
                 handleChange={this.handleChange}
@@ -150,10 +158,15 @@ class FormV1 extends React.Component {
               /> 
           </div>
         :
-        <div className="card">
-          <p>Thank you for registering</p>
-          <Link to="/signup" className="button-home">Register again</Link>
-        </div>
+        <Card className="card-signup">
+          <Card.Body>
+          <h3>Thank you for registering</h3>
+          <br></br>
+          <Link to="/signup" className="button-home">
+            <Button type="button" variant="outline-dark"> Register again</Button>
+          </Link>
+          </Card.Body>
+        </Card>
         
       }
     </div>
@@ -167,38 +180,45 @@ class Step1 extends React.Component {
       return null
   }
   return(
-    <div>
+    <Card className='card-signup'>
+      <Card.Body>
       <form onSubmit={this.props.submit}>
+      
       <h3>Basic Information</h3>
-      <label>
-        Name:
+      <hr></hr>
+      <label for="name"> Name: </label>
+      <span>
+      <input 
+        className="form-control text-input"
+        id="name"
+        name="name"
+        type="text"
+        placeholder="Enter name"
+        value={this.props.name} // Prop: The email input data
+        onChange={this.props.handleChange} // Prop: Puts data into state
+      />
+      </span>
+      <br></br>
+      <label for="email"> Email: </label>   
+      <span>   
         <input 
-          className="form-control"
-          id="name"
-          name="name"
-          type="text"
-          placeholder="Enter name"
-          value={this.props.name} // Prop: The email input data
-          onChange={this.props.handleChange} // Prop: Puts data into state
-        />
-      </label>
-      <label>
-        Email:
-        <input 
-          className="form-control"
+          className="form-control text-input"
           id="email"
           name="email"
           type="text"
           placeholder="Enter email"
+          width="78"
           value={this.props.email} // Prop: The email input data
           onChange={this.props.handleChange} // Prop: Puts data into state
           required
-        />
-      </label>
+        />   
+      </span>       
+      <br></br>
       {this.props.prev}
       {this.props.next}
       </form>
-    </div>
+      </Card.Body>
+    </Card>
   )}
 }
 
@@ -207,39 +227,44 @@ class Step2 extends React.Component {
     if (this.props.currentStep !== 2) { // Prop: The current step
       return null
   }
-  // The markup for the Step 1 UI
   return(
-    <div>
+    <Card className='card-signup'>
+      <Card.Body>
       <form onSubmit={this.props.submit}>
+      
       <h3>Password Setting</h3>
-      <label>
-        Password
+      <hr></hr>
+      <label for="password"> Password: </label>
+      <span>
+      <input 
+        className="form-control text-input"
+        id="password"
+        name="password"
+        type="password"
+        placeholder="Password"
+        value={this.props.password} // Prop: The password input data
+        onChange={this.props.handleChange} // Prop: Puts data into state
+      />
+      </span>
+      <br></br>
+      <label for="repassword"> Reenter Password </label>   
+      <span>   
         <input 
-          className="form-control"
-          id="password"
-          name="password"
-          type="text"
-          placeholder="Enter password"
-          value={this.props.password} // Prop: The password input data
+          className="form-control text-input"
+          id="repassword"
+          name="repassword"
+          type="password"
+          placeholder="Password"
+          value={this.props.repassword} // Prop: The password input data
           onChange={this.props.handleChange} // Prop: Puts data into state
-        />
-      </label>
-      <label>
-        Re-enter Password
-        <input 
-          className="form-control"
-          id="password"
-          name="password"
-          type="text"
-          placeholder="Enter password"
-          value={this.props.password} // Prop: The password input data
-          onChange={this.props.handleChange} // Prop: Puts data into state
-        />
-      </label>
+        />   
+      </span>       
+      <br></br>
       {this.props.prev}
       {this.props.next}
       </form>
-    </div>
+      </Card.Body>
+    </Card>
   )}
 }
 
@@ -253,25 +278,30 @@ class Step3 extends React.Component {
       )
     }
   return(
-    <div>
+    <Card className='card-signup'>
+      <Card.Body>
       <form onSubmit={this.props.submit}>
+      
       <h3>Link with Mobile</h3>
-      <label>
-        Mobile
-        <input 
-          className="form-control"
-          id="mobile"
-          name="mobile"
-          type="text"
-          placeholder="Enter mobile number"
-          value={this.props.mobile} // Prop: The mobile input data
-          onChange={this.props.handleChange} // Prop: Puts data into state
-        />
-      </label>
+      <hr></hr>
+      <label for="mobile"> Mobile: </label>
+      <span>
+      <input 
+        className="form-control text-input"
+        id="mobile"
+        name="mobile"
+        type="text"
+        placeholder="Enter mobile number"
+        value={this.props.mobile} // Prop: The mobile input data
+        onChange={this.props.handleChange} // Prop: Puts data into state
+      />
+      </span>
+      <br></br>
       {this.props.prev}
       {this.props.next}
       </form>
-    </div>
+      </Card.Body>
+    </Card>
   )}
 }
 

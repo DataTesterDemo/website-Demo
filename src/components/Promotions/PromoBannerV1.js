@@ -1,6 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import spinner from '../../assets/spinner.gif'
+import {Card, Button, Modal} from 'react-bootstrap';
+import promo1 from "../../assets/promo1.jpg"
+import "./Promotions.css"
 //=================================================//
 //=========setup for split-url experiment==========//
 //================no code changes==================//
@@ -46,15 +49,27 @@ class PromoBannerV1 extends React.Component{
 
     }else if (!register){
       return(
-        <div className="card">
-          <h2>Promotional page</h2>
-          <p>more attractive graphics</p>
-          <p>slower performance loading screen</p>
-          <button 
+        <Card className="card-wide-promo">
+        <Card.Img variant="top" src={promo1} />
+        <Card.ImgOverlay>
+          <Card.Title className="promotion-title">New Promotion 1</Card.Title>
+          <Card.Text className="promotion-body">
+            Early Bird Sign-Up
+          </Card.Text>
+          <Card.Text className="promotion-content">
+            Save $50 when you sign up now!
+          </Card.Text>
+          <Link className="link"to="/signup">
+            <Button
+              variant="outline-dark"
               onClick={()=> this.onClick()}
               className="button-intermediate"
-          >Click to register now!</button>
-        </div>
+            >
+              Register Now!
+            </Button>
+          </Link>
+        </Card.ImgOverlay>
+      </Card>
       )
     }
     return(

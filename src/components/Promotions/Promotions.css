@@ -1,0 +1,58 @@
+h1{
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.header-promo{
+  background: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)), url("../../assets/promotionbg.jpg") center center fixed;
+  color: #FFF;
+  height: 100vh;
+  position: relative;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -msn-background-size: cover;
+  
+
+}
+.header-promo .overlay{
+  background: rgba(0, 0, 0, 0.58);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0; 
+}
+.promotion-title{
+  color: black;
+  font-weight: 20px;
+  font-size: 60px;
+}
+.promotion-body{
+  color: black;
+  font-weight: 600;
+  font-size: 70px;
+}
+.promotion-content{
+  color: black;
+  font-size: 25px;
+}
+.promotion-title-white{
+  color: white;
+  font-weight: 20px;
+  font-size: 60px;
+}
+.promotion-body-white{
+  color: white;
+  font-weight: 600;
+  font-size: 70px;
+}
+.promotion-content-white{
+  color: white;
+  font-size: 25px;
+}
+.card-wide-promo{
+  height: auto;
+  max-height: 350px;
+}

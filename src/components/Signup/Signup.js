@@ -22,21 +22,23 @@ class SignUp extends React.Component{
       window.collectEvent('getVar', 'showDiscount', true, function(value) {
         console.log(value)
         if(value){
+          //custom inserted code for showing first signup form
           resolve(
             <div>
             <Route exact path="/signup" render={() => (
               <Redirect to="/signup/v1"/>
             )}/>
             </div>
-          ) //custom inserted code for showing first signup form
+          ) 
         }else{
+          //custom inserted code for showing second signup form
           resolve(
             <div>
             <Route exact path="/signup" render={() => (
               <Redirect to="/signup/v2"/>
             )}/>
             </div>
-          ) //custom inserted code for showing second signup form
+          ) 
         }
       })   
     })
@@ -49,7 +51,9 @@ class SignUp extends React.Component{
   //display content
   render(){
     return(
-      <div>
+      <section className="header-signup">
+      <div className="body-signup">
+        <h1>Create a New Account</h1>
         <Route path="/signup/v1">
           <FormV1/>
         </Route>
@@ -58,6 +62,7 @@ class SignUp extends React.Component{
         </Route>
         {this.state.content}
       </div>
+      </section>
     )
   }
 }

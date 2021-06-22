@@ -1,4 +1,13 @@
 import React from 'react';
+import {Card, Button, Modal} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
+import './Products.css';
+import promo1 from "../../assets/promo1.jpg"
+import promo2 from "../../assets/promo2.jpg"
+import product1 from "../../assets/product1.jpg"
+import product2 from "../../assets/product2.jpg"
+import product3 from "../../assets/product3.jpg"
+
 //=================================================//
 //============setup for visual experiment==========//
 //================no code changes==================//
@@ -40,57 +49,115 @@ class Products extends React.Component{
     })
   }
   render(){
-    const {purchased} = this.state
-    if(!purchased){
       return(
-        <div>
-          <h2>Shop for Products</h2>
-          <div className="rows">
-            <div className="row">
-              <h3>Product 1</h3>
-              <p>Price: $80</p>
-              <button 
-              onClick={()=> this.onClick("Product 1","$80")}
-              className="button-intermediate"
-              >Purchase</button>
+        <div className="page body">
+          <Modal show={this.state.purchased} aria-labelledby="contained-modal-title-vcenter" centered>
+            <Modal.Header>
+              <Modal.Title>Purchase Completed</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>Thank you for purchasing {this.state.product}</Modal.Body>
+            <Modal.Footer>
+              <Button variant="outline-dark" onClick={this.continueShopping}>
+                Continue Shopping
+              </Button>
+              <Link to="/">
+                <Button variant="outline-dark">
+                  Back to Home page
+                </Button>
+              </Link>
+            </Modal.Footer>
+          </Modal>
+          <div class="row">
+          <div class="col-md-6">
+            <div class="col-md-12">
+              <Card className="card-flat">
+                  <Card.Img variant="top" src={promo2} />
+                  <Card.ImgOverlay>
+                    <Card.Title className="promo_title_white">Exclusive Membership</Card.Title>
+                    <Card.Text className="promo_body_white">
+                      New Promotion 2
+                    </Card.Text>
+                    <Link className="link"to="/promotion/v2">
+                      <Button variant="outline-light" className="button-intermediate">
+                        More Details
+                      </Button>
+                    </Link>
+                  </Card.ImgOverlay>
+                </Card>
             </div>
-            <div className="row">
-              <h3>Product 2</h3>
-              <p>Price: $70</p>
-              <button 
-              onClick={()=> this.onClick("Product 2","70")}
-              className="button-intermediate"
-              >Purchase</button>
             </div>
-            <div className="row">
-              <h3>Product 3</h3>
-              <p>Price: $90</p>
-              <button 
-              onClick={()=> this.onClick("Product 3","$90")}
-              className="button-intermediate"
-              >Purchase</button>
+            <div class="col-md-6">
+              <div class="col-md-12">
+                <Card className="card-wide">
+                  <Card.Img variant="top" src={promo1} />
+                  <Card.ImgOverlay>
+                    <Card.Title className="promo_title">Early Bird Sale</Card.Title>
+                    <Card.Text className="promo_body">
+                      New Promotion 1
+                    </Card.Text>
+                    <Link className="link"to="/promotion/v1">
+                      <Button variant="outline-dark" className="button-intermediate">
+                        Find out more
+                      </Button>
+                    </Link>
+                  </Card.ImgOverlay>
+                </Card>
+              </div>
             </div>
-            <div className="row">
-              <h3>Product 4</h3>
-              <p>Price: $100</p>
-              <button 
-              onClick={()=> this.onClick("Product 4","$100")}
-              className="button-intermediate"
-              >Purchase</button>
+          </div>
+          <br></br>
+          <br></br>
+          <h1 className="product-h1">Exclusive Products</h1>
+          <hr></hr>
+          <div class="row hidden-md-up">
+            <div class="col-md-4">
+              <Card className="card-normal">
+                <Card.Img  variant="top" src={product2} />
+                <Card.Body>
+                  <Card.Title>Product 1</Card.Title>
+                  <Card.Text className="money">
+                    $350
+                  </Card.Text>
+                  <Button 
+                  onClick={()=> this.onClick("Product 1","$80")}
+                  variant="outline-dark"
+                  >Purchase</Button>
+                </Card.Body>
+              </Card>
+            </div>
+            <div class="col-md-4">
+              <Card className="card-normal">
+                <Card.Img variant="top" src={product1} />
+                <Card.Body>
+                  <Card.Title>Product 2</Card.Title>
+                  <Card.Text className="money">
+                    $160
+                  </Card.Text>
+                  <Button 
+                  onClick={()=> this.onClick("Product 2","$80")}
+                  variant="outline-dark"
+                  >Purchase</Button>
+                </Card.Body>
+              </Card>
+            </div>
+            <div class="col-md-4">
+              <Card className="card-normal"> 
+                <Card.Img variant="top" src={product3} />
+                <Card.Body>
+                  <Card.Title>Product 3</Card.Title>
+                  <Card.Text className="money">
+                    $80
+                  </Card.Text>
+                  <Button 
+                  onClick={()=> this.onClick("Product 3","$80")}
+                  variant="outline-dark"
+                  >Purchase</Button>
+                </Card.Body>
+              </Card>
             </div>
           </div>
         </div>
       )
-    }
-    return(
-        <div className="card">
-          <p>You have purchased product: {this.state.product}</p>
-          <button 
-          onClick={this.continueShopping}
-          className="button-intermediate"
-          >Continue Shopping</button>
-        </div>
-    )
   }
 }
 export default Products;
