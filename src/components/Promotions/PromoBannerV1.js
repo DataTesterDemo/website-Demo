@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import spinner from '../../assets/spinner.gif'
-import {Card, Button, Modal} from 'react-bootstrap';
+import {Card, Button} from 'react-bootstrap';
 import promo1 from "../../assets/promo1.jpg"
 import "./Promotions.css"
 //=================================================//

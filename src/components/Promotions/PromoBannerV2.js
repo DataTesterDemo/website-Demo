@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {Card, Button, Modal} from 'react-bootstrap';
+import {Card, Button} from 'react-bootstrap';
 import spinner from '../../assets/spinner.gif'
 import promo2 from "../../assets/promo2.jpg"
 //=================================================//
