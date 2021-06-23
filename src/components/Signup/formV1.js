@@ -103,7 +103,6 @@ class FormV1 extends React.Component {
     }else{
       const {email, time} = this.state
       const newTime = (Date.now() - time)/1000
-      //resetting form data
       event.preventDefault()
       event.target.reset()
       console.log(this.state)

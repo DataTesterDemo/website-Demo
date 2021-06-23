@@ -119,7 +119,7 @@ class Products extends React.Component{
                     $350
                   </Card.Text>
                   <Button 
-                  onClick={()=> this.onClick("Product 1","$80")}
+                  onClick={()=> this.onClick("Product 1","$350")}
                   variant="outline-dark"
                   >Purchase</Button>
                 </Card.Body>
@@ -134,7 +134,7 @@ class Products extends React.Component{
                     $160
                   </Card.Text>
                   <Button 
-                  onClick={()=> this.onClick("Product 2","$80")}
+                  onClick={()=> this.onClick("Product 2","$160")}
                   variant="outline-dark"
                   >Purchase</Button>
                 </Card.Body>

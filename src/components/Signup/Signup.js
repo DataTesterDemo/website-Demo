@@ -20,7 +20,6 @@ class SignUp extends React.Component{
     var programmedExperiment = new Promise((resolve,reject)=>{
       //code from data Tester
       window.collectEvent('getVar', 'showDiscount', true, function(value) {
-        console.log(value)
         if(value){
           //custom inserted code for showing first signup form
           resolve(
