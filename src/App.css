@@ -12,7 +12,7 @@
   font-weight: 900;
 }
 .header{
-  background: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) center center fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)), url("./assets/app.png") center center fixed;
   color: #FFF;
   height: 100vh;
   position: relative;
