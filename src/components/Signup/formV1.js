@@ -105,7 +105,6 @@ class FormV1 extends React.Component {
       const newTime = (Date.now() - time)/1000
       event.preventDefault()
       event.target.reset()
-      console.log(this.state)
       //sending data to data tester
       console.log('sending data')
       window.collectEvent('click_register_button') //sending data of register click

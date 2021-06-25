@@ -67,9 +67,9 @@ class Products extends React.Component{
               </Link>
             </Modal.Footer>
           </Modal>
-          <div class="row">
-          <div class="col-md-6">
-            <div class="col-md-12">
+          <div className="row">
+          <div className="col-md-6">
+            <div className="col-md-12">
               <Card className="card-flat">
                   <Card.Img variant="top" src={promo2} />
                   <Card.ImgOverlay>
@@ -86,8 +86,8 @@ class Products extends React.Component{
                 </Card>
             </div>
             </div>
-            <div class="col-md-6">
-              <div class="col-md-12">
+            <div className="col-md-6">
+              <div className="col-md-12">
                 <Card className="card-wide">
                   <Card.Img variant="top" src={promo1} />
                   <Card.ImgOverlay>
@@ -109,8 +109,8 @@ class Products extends React.Component{
           <br></br>
           <h1 className="product-h1">Exclusive Products</h1>
           <hr></hr>
-          <div class="row hidden-md-up">
-            <div class="col-md-4">
+          <div className="row hidden-md-up">
+            <div className="col-md-4">
               <Card className="card-normal">
                 <Card.Img  variant="top" src={product2} />
                 <Card.Body>
@@ -125,7 +125,7 @@ class Products extends React.Component{
                 </Card.Body>
               </Card>
             </div>
-            <div class="col-md-4">
+            <div className="col-md-4">
               <Card className="card-normal">
                 <Card.Img variant="top" src={product1} />
                 <Card.Body>
@@ -140,7 +140,7 @@ class Products extends React.Component{
                 </Card.Body>
               </Card>
             </div>
-            <div class="col-md-4">
+            <div className="col-md-4">
               <Card className="card-normal"> 
                 <Card.Img variant="top" src={product3} />
                 <Card.Body>
