@@ -19,13 +19,13 @@ class SignUp extends React.Component{
     //code for programmed experiment; promise used to wait for datatester data
     var programmedExperiment = new Promise((resolve,reject)=>{
       //code from data Tester
-      window.collectEvent('getVar', 'showDiscount', true, function(value) {
+      window.collectEvent('getVar', 'register_new', true, function(value) {
         if(value){
           //custom inserted code for showing first signup form
           resolve(
             <div>
             <Route exact path="/signup" render={() => (
-              <Redirect to="/signup/v1"/>
+              <Redirect to="/signup/v2"/>
             )}/>
             </div>
           ) 
@@ -34,7 +34,7 @@ class SignUp extends React.Component{
           resolve(
             <div>
             <Route exact path="/signup" render={() => (
-              <Redirect to="/signup/v2"/>
+              <Redirect to="/signup/v1"/>
             )}/>
             </div>
           ) 
