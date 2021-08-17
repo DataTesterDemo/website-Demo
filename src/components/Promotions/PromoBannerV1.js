@@ -24,6 +24,15 @@ class PromoBannerV1 extends React.Component{
         hidden: false
       })
     }, 5000)
+    window.dataLayer.push({
+      'ecommerce': {
+        'impressions': [
+         {
+           'name': 'Promotion 1',       // Name or ID is required.
+           'position': 1
+         }]
+      }
+    });
   }
   onClick(){
     //report data to dataranger
