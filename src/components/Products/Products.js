@@ -37,14 +37,23 @@ class Products extends React.Component{
     window.dataLayer.push({
       'event': 'productClick',
       'ecommerce': {
-        'click': {
-          'actionField': {'list': 'Search Results'},      // Optional list property.
-          'products': [{
-            'name': product,                      // Name or ID is required.
+        'purchase': {
+          'actionField': {
+            'id': product,                         // Transaction ID. Required for purchases and refunds.
+            'affiliation': 'Online Store',
+            'revenue': price,                     // Total transaction value (incl. tax and shipping)
+            'tax':'0',
+            'shipping': '0',
+            'coupon': 'SUMMER_SALE'
+          },
+          'products': [{                            // List of productFieldObjects.
+            'name': product,     // Name or ID is required.
+            'id': '12345',
             'price': price,
+            'quantity': 1,                           // Optional fields may be omitted or set to empty string.
            }]
-         }
-       },
+        }
+      }
     });
     this.setState({
       purchased:true,
