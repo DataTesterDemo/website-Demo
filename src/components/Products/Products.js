@@ -34,6 +34,21 @@ class Products extends React.Component{
       product_name: product_,
       price: price_ 
     })
+    dataLayer.push({
+      'event': 'productClick',
+      'ecommerce': {
+        'click': {
+          'actionField': {'list': 'Search Results'},      // Optional list property.
+          'products': [{
+            'name': product,                      // Name or ID is required.
+            'price': price,
+           }]
+         }
+       },
+       'eventCallback': function() {
+         document.location = productObj.url
+       }
+    });
     this.setState({
       purchased:true,
       product: product
