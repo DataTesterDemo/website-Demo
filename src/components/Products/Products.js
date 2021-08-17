@@ -34,7 +34,7 @@ class Products extends React.Component{
       product_name: product_,
       price: price_ 
     })
-    dataLayer.push({
+    window.dataLayer.push({
       'event': 'productClick',
       'ecommerce': {
         'click': {
@@ -45,9 +45,6 @@ class Products extends React.Component{
            }]
          }
        },
-       'eventCallback': function() {
-         document.location = productObj.url
-       }
     });
     this.setState({
       purchased:true,
