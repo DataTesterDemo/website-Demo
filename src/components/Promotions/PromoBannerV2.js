@@ -49,7 +49,7 @@ class PromoBannerV2 extends React.Component{
     const {hidden, register} = this.state
     if(hidden){
       return(
-        <div className="card" id = "promoImpression">
+        <div className="card">
         <img
           src={spinner}
           style={{ width: '100px', margin: 'auto', marginTop: "50px", marginBottom: '0px', display: 'block' }}
@@ -61,7 +61,7 @@ class PromoBannerV2 extends React.Component{
 
     }else if (!register){
       return(
-        <Card className="card-wide-promo">
+        <Card className="card-wide-promo" id = "promoImpression">
           <Card.Img variant="top" src={promo2} />
           <Card.ImgOverlay>
             <Card.Title className="promotion-title-white">New Promotion 2</Card.Title>
