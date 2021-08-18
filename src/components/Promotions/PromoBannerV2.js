@@ -49,7 +49,7 @@ class PromoBannerV2 extends React.Component{
     const {hidden, register} = this.state
     if(hidden){
       return(
-        <div className="card" data-type = "promoImpression">
+        <div className="card" id = "promoImpression">
         <img
           src={spinner}
           style={{ width: '100px', margin: 'auto', marginTop: "50px", marginBottom: '0px', display: 'block' }}
