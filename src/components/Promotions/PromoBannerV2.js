@@ -24,12 +24,16 @@ class PromoBannerV2 extends React.Component{
       })
     }, 300)
     window.dataLayer.push({
+      'event': 'promoview',
       'ecommerce': {
-        'impressions': [
-         {
-           'name': 'Promotion 2',       // Name or ID is required.
-           'position': 1
-         }]
+        'promoView': {
+          'promotions': [                     // Array of promoFieldObjects.
+           {                                // ID or Name is required.
+             'name': 'Promotion 2',
+             'creative': 'banner2',
+             'position': 'slot2'
+           }]
+        }
       }
     });
   }
@@ -45,7 +49,7 @@ class PromoBannerV2 extends React.Component{
     const {hidden, register} = this.state
     if(hidden){
       return(
-        <div className="card">
+        <div className="card" data-type = "promoImpression">
         <img
           src={spinner}
           style={{ width: '100px', margin: 'auto', marginTop: "50px", marginBottom: '0px', display: 'block' }}
