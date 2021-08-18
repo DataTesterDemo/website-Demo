@@ -22,7 +22,7 @@ class PromoBannerV2 extends React.Component{
       this.setState({
         hidden: false
       })
-    }, 2000)
+    }, 300)
     window.dataLayer.push({
       'event': 'promoview',
       'ecommerce': {
