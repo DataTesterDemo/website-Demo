@@ -23,6 +23,21 @@ class Products extends React.Component{
     }
     this.onClick = this.onClick.bind(this)
     this.continueShopping = this.continueShopping.bind(this)
+    // window.dataLayer.push({
+    //   'ecommerce': {
+    //     'impressions': [
+    //      {
+    //        'name': 'Triblend Android T-Shirt',       // Name or ID is required.
+    //        'id': '12345',
+    //        'price': '15.25',
+    //        'brand': 'Google',
+    //        'category': 'Apparel',
+    //        'variant': 'Gray',
+    //        'list': 'Search Results',
+    //        'position': 1
+    //      }]
+    //   }
+    // });
   }
   onClick(product,price){
     const product_ = product
@@ -34,6 +49,47 @@ class Products extends React.Component{
       product_name: product_,
       price: price_ 
     })
+    window.dataLayer.push({
+      'ecommerce': {
+        'impressions': [
+         {
+           'name': 'product 1',       // Name or ID is required.
+           'price': '350',
+         },
+         {
+          'name': 'product 2',       // Name or ID is required.
+          'price': '160',
+        },
+        {
+          'name': 'product 3',       // Name or ID is required.
+          'price': '80',
+        },
+        {
+          'name': 'product 4',       // Name or ID is required.
+          'price': '450',
+        },
+        {
+          'name': 'product 5',       // Name or ID is required.
+          'price': '60',
+        },
+        {
+          'name': 'product 6',       // Name or ID is required.
+          'price': '800',
+        },
+        {
+          'name': 'product 7',       // Name or ID is required.
+          'price': '4250',
+        },
+        {
+          'name': 'product 8',       // Name or ID is required.
+          'price': '800',
+        },
+        {
+          'name': 'product 9',       // Name or ID is required.
+          'price': '20',
+        }]
+      }
+    });
     window.dataLayer.push({
       'event': 'productClick',
       'ecommerce': {
@@ -171,6 +227,100 @@ class Products extends React.Component{
                   </Card.Text>
                   <Button 
                   onClick={()=> this.onClick("Product 3","$80")}
+                  variant="outline-dark"
+                  >Purchase</Button>
+                </Card.Body>
+              </Card>
+            </div>
+          </div>
+          <div className="row hidden-md-up">
+            <div className="col-md-4">
+              <Card className="card-normal">
+                <Card.Img  variant="top" src={product3} />
+                <Card.Body>
+                  <Card.Title>Product 4</Card.Title>
+                  <Card.Text className="money">
+                    $450
+                  </Card.Text>
+                  <Button 
+                  onClick={()=> this.onClick("Product 4","$450")}
+                  variant="outline-dark"
+                  >Purchase</Button>
+                </Card.Body>
+              </Card>
+            </div>
+            <div className="col-md-4">
+              <Card className="card-normal">
+                <Card.Img variant="top" src={product2} />
+                <Card.Body>
+                  <Card.Title>Product 5</Card.Title>
+                  <Card.Text className="money">
+                    $60
+                  </Card.Text>
+                  <Button 
+                  onClick={()=> this.onClick("Product 5","$60")}
+                  variant="outline-dark"
+                  >Purchase</Button>
+                </Card.Body>
+              </Card>
+            </div>
+            <div className="col-md-4">
+              <Card className="card-normal"> 
+                <Card.Img variant="top" src={product1} />
+                <Card.Body>
+                  <Card.Title>Product 6</Card.Title>
+                  <Card.Text className="money">
+                    $800
+                  </Card.Text>
+                  <Button 
+                  onClick={()=> this.onClick("Product 6","$800")}
+                  variant="outline-dark"
+                  >Purchase</Button>
+                </Card.Body>
+              </Card>
+            </div>
+          </div>
+          <div className="row hidden-md-up">
+            <div className="col-md-4">
+              <Card className="card-normal">
+                <Card.Img  variant="top" src={product1} />
+                <Card.Body>
+                  <Card.Title>Product 7</Card.Title>
+                  <Card.Text className="money">
+                    $4250
+                  </Card.Text>
+                  <Button 
+                  onClick={()=> this.onClick("Product 7","$4250")}
+                  variant="outline-dark"
+                  >Purchase</Button>
+                </Card.Body>
+              </Card>
+            </div>
+            <div className="col-md-4">
+              <Card className="card-normal">
+                <Card.Img variant="top" src={product2} />
+                <Card.Body>
+                  <Card.Title>Product 8</Card.Title>
+                  <Card.Text className="money">
+                    $600
+                  </Card.Text>
+                  <Button 
+                  onClick={()=> this.onClick("Product 8","$600")}
+                  variant="outline-dark"
+                  >Purchase</Button>
+                </Card.Body>
+              </Card>
+            </div>
+            <div className="col-md-4">
+              <Card className="card-normal"> 
+                <Card.Img variant="top" src={product3} />
+                <Card.Body>
+                  <Card.Title>Product 9</Card.Title>
+                  <Card.Text className="money">
+                    $20
+                  </Card.Text>
+                  <Button 
+                  onClick={()=> this.onClick("Product 9","$20")}
                   variant="outline-dark"
                   >Purchase</Button>
                 </Card.Body>
