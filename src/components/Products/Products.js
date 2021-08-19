@@ -188,7 +188,7 @@ class Products extends React.Component{
           <hr></hr>
           <div className="row hidden-md-up">
             <div className="col-md-4">
-              <Card className="card-normal">
+              <Card className="card-normal" data-product-id="product 1">
                 <Card.Img  variant="top" src={product2} />
                 <Card.Body>
                   <Card.Title>Product 1</Card.Title>
@@ -203,7 +203,7 @@ class Products extends React.Component{
               </Card>
             </div>
             <div className="col-md-4">
-              <Card className="card-normal">
+              <Card className="card-normal" data-product-id="product 2">
                 <Card.Img variant="top" src={product1} />
                 <Card.Body>
                   <Card.Title>Product 2</Card.Title>
@@ -218,7 +218,7 @@ class Products extends React.Component{
               </Card>
             </div>
             <div className="col-md-4">
-              <Card className="card-normal"> 
+              <Card className="card-normal" data-product-id="product 3"> 
                 <Card.Img variant="top" src={product3} />
                 <Card.Body>
                   <Card.Title>Product 3</Card.Title>
@@ -235,7 +235,7 @@ class Products extends React.Component{
           </div>
           <div className="row hidden-md-up">
             <div className="col-md-4">
-              <Card className="card-normal">
+              <Card className="card-normal" data-product-id="product 4">
                 <Card.Img  variant="top" src={product3} />
                 <Card.Body>
                   <Card.Title>Product 4</Card.Title>
@@ -250,7 +250,7 @@ class Products extends React.Component{
               </Card>
             </div>
             <div className="col-md-4">
-              <Card className="card-normal">
+              <Card className="card-normal" data-product-id="product 5">
                 <Card.Img variant="top" src={product2} />
                 <Card.Body>
                   <Card.Title>Product 5</Card.Title>
@@ -265,7 +265,7 @@ class Products extends React.Component{
               </Card>
             </div>
             <div className="col-md-4">
-              <Card className="card-normal"> 
+              <Card className="card-normal" data-product-id="product 6"> 
                 <Card.Img variant="top" src={product1} />
                 <Card.Body>
                   <Card.Title>Product 6</Card.Title>
@@ -282,7 +282,7 @@ class Products extends React.Component{
           </div>
           <div className="row hidden-md-up">
             <div className="col-md-4">
-              <Card className="card-normal">
+              <Card className="card-normal" data-product-id="product 7">
                 <Card.Img  variant="top" src={product1} />
                 <Card.Body>
                   <Card.Title>Product 7</Card.Title>
@@ -297,7 +297,7 @@ class Products extends React.Component{
               </Card>
             </div>
             <div className="col-md-4">
-              <Card className="card-normal">
+              <Card className="card-normal" data-product-id="product 8">
                 <Card.Img variant="top" src={product2} />
                 <Card.Body>
                   <Card.Title>Product 8</Card.Title>
@@ -312,7 +312,7 @@ class Products extends React.Component{
               </Card>
             </div>
             <div className="col-md-4">
-              <Card className="card-normal"> 
+              <Card className="card-normal" data-product-id="product 9"> 
                 <Card.Img variant="top" src={product3} />
                 <Card.Body>
                   <Card.Title>Product 9</Card.Title>
