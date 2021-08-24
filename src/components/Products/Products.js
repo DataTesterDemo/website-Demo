@@ -23,6 +23,8 @@ class Products extends React.Component{
     }
     this.onClick = this.onClick.bind(this)
     this.continueShopping = this.continueShopping.bind(this)
+  }
+  componentDidMount(){
     window.dataLayer.push({
       'ecommerce': {
         'impressions': [
