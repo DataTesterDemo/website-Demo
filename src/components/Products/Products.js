@@ -23,21 +23,47 @@ class Products extends React.Component{
     }
     this.onClick = this.onClick.bind(this)
     this.continueShopping = this.continueShopping.bind(this)
-    // window.dataLayer.push({
-    //   'ecommerce': {
-    //     'impressions': [
-    //      {
-    //        'name': 'Triblend Android T-Shirt',       // Name or ID is required.
-    //        'id': '12345',
-    //        'price': '15.25',
-    //        'brand': 'Google',
-    //        'category': 'Apparel',
-    //        'variant': 'Gray',
-    //        'list': 'Search Results',
-    //        'position': 1
-    //      }]
-    //   }
-    // });
+    window.dataLayer.push({
+      'ecommerce': {
+        'impressions': [
+         {
+           'id': 'product 1',       // Name or ID is required.
+           'price': '350',
+         },
+         {
+          'id': 'product 2',       // Name or ID is required.
+          'price': '160',
+        },
+        {
+          'id': 'product 3',       // Name or ID is required.
+          'price': '80',
+        },
+        {
+          'id': 'product 4',       // Name or ID is required.
+          'price': '450',
+        },
+        {
+          'id': 'product 5',       // Name or ID is required.
+          'price': '60',
+        },
+        {
+          'id': 'product 6',       // Name or ID is required.
+          'price': '800',
+        },
+        {
+          'id': 'product 7',       // Name or ID is required.
+          'price': '4250',
+        },
+        {
+          'id': 'product 8',       // Name or ID is required.
+          'price': '800',
+        },
+        {
+          'id': 'product 9',       // Name or ID is required.
+          'price': '20',
+        }]
+      }
+    });
   }
   onClick(product,price){
     const product_ = product
@@ -49,47 +75,6 @@ class Products extends React.Component{
       product_name: product_,
       price: price_ 
     })
-    window.dataLayer.push({
-      'ecommerce': {
-        'impressions': [
-         {
-           'name': 'product 1',       // Name or ID is required.
-           'price': '350',
-         },
-         {
-          'name': 'product 2',       // Name or ID is required.
-          'price': '160',
-        },
-        {
-          'name': 'product 3',       // Name or ID is required.
-          'price': '80',
-        },
-        {
-          'name': 'product 4',       // Name or ID is required.
-          'price': '450',
-        },
-        {
-          'name': 'product 5',       // Name or ID is required.
-          'price': '60',
-        },
-        {
-          'name': 'product 6',       // Name or ID is required.
-          'price': '800',
-        },
-        {
-          'name': 'product 7',       // Name or ID is required.
-          'price': '4250',
-        },
-        {
-          'name': 'product 8',       // Name or ID is required.
-          'price': '800',
-        },
-        {
-          'name': 'product 9',       // Name or ID is required.
-          'price': '20',
-        }]
-      }
-    });
     window.dataLayer.push({
       'event': 'productClick',
       'ecommerce': {
