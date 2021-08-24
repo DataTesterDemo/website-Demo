@@ -25,48 +25,93 @@ class Products extends React.Component{
     this.continueShopping = this.continueShopping.bind(this)
   }
   componentDidMount(){
-    window.dataLayer.push({
-      'ecommerce': {
-        'impressions': [
-         {
-           'id': 'product 1',       // Name or ID is required.
-           'price': '350',
-         },
-         {
-          'id': 'product 2',       // Name or ID is required.
-          'price': '160',
+    var products = [
+        {
+          'id': 'product 1',       // Name or ID is required.
+          'price': '350',
         },
         {
-          'id': 'product 3',       // Name or ID is required.
-          'price': '80',
-        },
-        {
-          'id': 'product 4',       // Name or ID is required.
-          'price': '450',
-        },
-        {
-          'id': 'product 5',       // Name or ID is required.
-          'price': '60',
-        },
-        {
-          'id': 'product 6',       // Name or ID is required.
-          'price': '800',
-        },
-        {
-          'id': 'product 7',       // Name or ID is required.
-          'price': '4250',
-        },
-        {
-          'id': 'product 8',       // Name or ID is required.
-          'price': '800',
-        },
-        {
-          'id': 'product 9',       // Name or ID is required.
-          'price': '20',
-        }]
+        'id': 'product 2',       // Name or ID is required.
+        'price': '160',
+      },
+      {
+        'id': 'product 3',       // Name or ID is required.
+        'price': '80',
+      },
+      {
+        'id': 'product 4',       // Name or ID is required.
+        'price': '450',
+      },
+      {
+        'id': 'product 5',       // Name or ID is required.
+        'price': '60',
+      },
+      {
+        'id': 'product 6',       // Name or ID is required.
+        'price': '800',
+      },
+      {
+        'id': 'product 7',       // Name or ID is required.
+        'price': '4250',
+      },
+      {
+        'id': 'product 8',       // Name or ID is required.
+        'price': '800',
+      },
+      {
+        'id': 'product 9',       // Name or ID is required.
+        'price': '20',
+      },
+      {
+        'id': 'product 10',       // Name or ID is required.
+        'price': '26',
+      },
+      {
+        'id': 'product 11',       // Name or ID is required.
+        'price': '36',
+      },
+      {
+        'id': 'product 12',       // Name or ID is required.
+        'price': '35',
+      },
+      {
+        'id': 'product 13',       // Name or ID is required.
+        'price': '2000',
+      },
+      {
+        'id': 'product 14',       // Name or ID is required.
+        'price': '50',
+      },
+      {
+        'id': 'product 15',       // Name or ID is required.
+        'price': '45',
       }
+
+    ]
+    //gtm implementations
+    // window.dataLayer.push({
+    //   'ecommerce': {
+    //     'impressions': products
+    //   }
+    // });
+    window.addEventListener('scroll', function() {
+      products.forEach(function(item, index, object){
+        const element = document.getElementById(item['id'])
+        var position = element.getBoundingClientRect();
+        // checking whether fully visible
+        if(position.top >= 0 && position.bottom <= window.innerHeight) {
+          console.log(item['id'] + "is visible price: " + item['price'])
+          object.splice(index, 1);
+          //report view data to dataranger
+          window.collectEvent("product summary impression view",{
+            product_name: item['id'],
+            price: item["price"]
+          })
+        }
+      }) 
     });
   }
+
   onClick(product,price){
     const product_ = product
     const price_ = price
@@ -77,6 +122,8 @@ class Products extends React.Component{
       product_name: product_,
       price: price_ 
     })
+
+    //gtm implementations
     window.dataLayer.push({
       'event': 'productClick',
       'ecommerce': {
@@ -175,7 +222,7 @@ class Products extends React.Component{
           <hr></hr>
           <div className="row hidden-md-up">
             <div className="col-md-4">
-              <Card className="card-normal" data-product-id="product 1">
+              <Card className="card-normal" data-product-id="product 1" id = "product 1">
                 <Card.Img  variant="top" src={product2} />
                 <Card.Body>
                   <Card.Title>Product 1</Card.Title>
@@ -190,7 +237,7 @@ class Products extends React.Component{
               </Card>
             </div>
             <div className="col-md-4">
-              <Card className="card-normal" data-product-id="product 2">
+              <Card className="card-normal" data-product-id="product 2" id = "product 2">
                 <Card.Img variant="top" src={product1} />
                 <Card.Body>
                   <Card.Title>Product 2</Card.Title>
@@ -205,7 +252,7 @@ class Products extends React.Component{
               </Card>
             </div>
             <div className="col-md-4">
-              <Card className="card-normal" data-product-id="product 3"> 
+              <Card className="card-normal" data-product-id="product 3" id = "product 3"> 
                 <Card.Img variant="top" src={product3} />
                 <Card.Body>
                   <Card.Title>Product 3</Card.Title>
@@ -222,7 +269,7 @@ class Products extends React.Component{
           </div>
           <div className="row hidden-md-up">
             <div className="col-md-4">
-              <Card className="card-normal" data-product-id="product 4">
+              <Card className="card-normal" data-product-id="product 4" id = "product 4">
                 <Card.Img  variant="top" src={product3} />
                 <Card.Body>
                   <Card.Title>Product 4</Card.Title>
@@ -237,7 +284,7 @@ class Products extends React.Component{
               </Card>
             </div>
             <div className="col-md-4">
-              <Card className="card-normal" data-product-id="product 5">
+              <Card className="card-normal" data-product-id="product 5" id = "product 5">
                 <Card.Img variant="top" src={product2} />
                 <Card.Body>
                   <Card.Title>Product 5</Card.Title>
@@ -252,7 +299,7 @@ class Products extends React.Component{
               </Card>
             </div>
             <div className="col-md-4">
-              <Card className="card-normal" data-product-id="product 6"> 
+              <Card className="card-normal" data-product-id="product 6" id = "product 6"> 
                 <Card.Img variant="top" src={product1} />
                 <Card.Body>
                   <Card.Title>Product 6</Card.Title>
@@ -269,7 +316,7 @@ class Products extends React.Component{
           </div>
           <div className="row hidden-md-up">
             <div className="col-md-4">
-              <Card className="card-normal" data-product-id="product 7">
+              <Card className="card-normal" data-product-id="product 7" id = "product 7">
                 <Card.Img  variant="top" src={product1} />
                 <Card.Body>
                   <Card.Title>Product 7</Card.Title>
@@ -284,7 +331,7 @@ class Products extends React.Component{
               </Card>
             </div>
             <div className="col-md-4">
-              <Card className="card-normal" data-product-id="product 8">
+              <Card className="card-normal" data-product-id="product 8" id = "product 8">
                 <Card.Img variant="top" src={product2} />
                 <Card.Body>
                   <Card.Title>Product 8</Card.Title>
@@ -299,7 +346,7 @@ class Products extends React.Component{
               </Card>
             </div>
             <div className="col-md-4">
-              <Card className="card-normal" data-product-id="product 9"> 
+              <Card className="card-normal" data-product-id="product 9" id = "product 9"> 
                 <Card.Img variant="top" src={product3} />
                 <Card.Body>
                   <Card.Title>Product 9</Card.Title>
@@ -313,6 +360,104 @@ class Products extends React.Component{
                 </Card.Body>
               </Card>
             </div>
+          </div>
+          <div className="row hidden-md-up">
+            <div className="col-md-4">
+              <Card className="card-normal" data-product-id="product 10" id = "product 10">
+                <Card.Img  variant="top" src={product2} />
+                <Card.Body>
+                  <Card.Title>Product 10</Card.Title>
+                  <Card.Text className="money">
+                    $26
+                  </Card.Text>
+                  <Button 
+                  onClick={()=> this.onClick("Product 10","$26")}
+                  variant="outline-dark"
+                  >Purchase</Button>
+                </Card.Body>
+              </Card>
+            </div>
+            <div className="col-md-4">
+              <Card className="card-normal" data-product-id="product 11" id = "product 11">
+                <Card.Img variant="top" src={product1} />
+                <Card.Body>
+                  <Card.Title>Product 11</Card.Title>
+                  <Card.Text className="money">
+                    $36
+                  </Card.Text>
+                  <Button 
+                  onClick={()=> this.onClick("Product 11","$36")}
+                  variant="outline-dark"
+                  >Purchase</Button>
+                </Card.Body>
+              </Card>
+            </div>
+            <div className="col-md-4">
+              <Card className="card-normal" data-product-id="product 12" id = "product 12"> 
+                <Card.Img variant="top" src={product3} />
+                <Card.Body>
+                  <Card.Title>Product 12</Card.Title>
+                  <Card.Text className="money">
+                    $35
+                  </Card.Text>
+                  <Button 
+                  onClick={()=> this.onClick("Product 12","$35")}
+                  variant="outline-dark"
+                  >Purchase</Button>
+                </Card.Body>
+              </Card>
+            </div>
+          </div>
+          <div className="row hidden-md-up">
+            <div className="col-md-4">
+              <Card className="card-normal" data-product-id="product 13" id = "product 13">
+                <Card.Img  variant="top" src={product1} />
+                <Card.Body>
+                  <Card.Title>Product 13</Card.Title>
+                  <Card.Text className="money">
+                    $2000
+                  </Card.Text>
+                  <Button 
+                  onClick={()=> this.onClick("Product 13","$2000")}
+                  variant="outline-dark"
+                  >Purchase</Button>
+                </Card.Body>
+              </Card>
+            </div>
+            <div className="col-md-4">
+              <Card className="card-normal" data-product-id="product 14" id = "product 14">
+                <Card.Img variant="top" src={product2} />
+                <Card.Body>
+                  <Card.Title>Product 14</Card.Title>
+                  <Card.Text className="money">
+                    $50
+                  </Card.Text>
+                  <Button 
+                  onClick={()=> this.onClick("Product 14","$50")}
+                  variant="outline-dark"
+                  >Purchase</Button>
+                </Card.Body>
+              </Card>
+            </div>
+            <div className="col-md-4">
+              <Card className="card-normal" data-product-id="product 15" id = "product 15"> 
+                <Card.Img variant="top" src={product3} />
+                <Card.Body>
+                  <Card.Title>Product 15</Card.Title>
+                  <Card.Text className="money">
+                    $45
+                  </Card.Text>
+                  <Button 
+                  onClick={()=> this.onClick("Product 15","$45")}
+                  variant="outline-dark"
+                  >Purchase</Button>
+                </Card.Body>
+              </Card>
+            </div>
+          </div>
+          <div>
+            <br></br>
+            <br></br>
           </div>
         </div>
       )
